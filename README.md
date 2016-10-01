@@ -22,7 +22,7 @@ export class ItemsComponent implements OnInit, OnChanges {
     constructor(private itemService: ItemService) {}
 
     ngOnInit() {    
-        this.total$ = this.jobService.total$;
+        this.total$ = this.itemService.total$;
         
         const pageSource = this.pageStream.map(pageNumber => {
             this.page = pageNumber;
