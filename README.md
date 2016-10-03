@@ -62,5 +62,5 @@ export class ItemsComponent implements OnInit, OnChanges {
     </tbody>
 </table>
 
-<vardius-pagination [total]="total$ | async" [page]="page" [limit]="limit" (setLimit)="setLimit($event)" (goTo)="goToPage($event)" class="text-center"></my-pagination>
+<vardius-pagination [total]="total$ | async" [page]="page" [limit]="limit" (setLimit)="setLimit($event)" (goTo)="goToPage($event)" class="text-center"></vardius-pagination>
 ```

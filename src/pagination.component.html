@@ -1,27 +1,27 @@
 <nav *ngIf="totalPages() > 1">
     <ul class="pagination">
-        <li *ngIf="page > 2">
-            <a (click)="pageClicked(1)" aria-label="Previous">
+        <li class="first" *ngIf="page > 2">
+            <a (click)="pageClicked(1)" aria-label="First">
                 <span aria-hidden="true">&laquo;&laquo;</span>
             </a>
         </li>
-        <li [class.disabled]="page == 1">
+        <li class="previous" [class.disabled]="page == 1">
             <a (click)="pageClicked(prevPage(page != 1))" aria-label="Previous">
                 <span aria-hidden="true">&laquo;</span>
             </a>
         </li>
-        <li *ngFor="let p of pagesRange()" [class.active]="page == p">
+        <li class="current" *ngFor="let p of pagesRange()" [class.active]="page == p">
             <a *ngIf="page == p" [myHighlight]="'background'" (click)="pageClicked(p)">
                 {{ p }} <span class="sr-only">(current)</span>
             </a>
         </li>
-        <li [class.disabled]="totalPages() <= page">
+        <li class="next" [class.disabled]="totalPages() <= page">
             <a (click)="pageClicked(nextPage(totalPages() > page))" aria-label="Next">
                 <span aria-hidden="true">&raquo;</span>
             </a>
         </li>
-        <li *ngIf="page < totalPages()-1">
-            <a (click)="pageClicked(totalPages())" aria-label="Next">
+        <li class="last" *ngIf="page < totalPages()-1">
+            <a (click)="pageClicked(totalPages())" aria-label="Last">
                 <span aria-hidden="true">&raquo;&raquo;</span>
             </a>
         </li>

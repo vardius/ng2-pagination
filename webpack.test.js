@@ -17,11 +17,14 @@ module.exports = {
             {
                 test: /\.html$/,
                 loader: 'html'
-
             },
             {
                 test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
                 loader: 'null'
+            },
+            {
+                test: /\.json$/,
+                loader: 'json'
             },
             {
                 test: /\.css$/,
@@ -32,6 +35,16 @@ module.exports = {
                 test: /\.css$/,
                 include: root('src'),
                 loader: 'raw'
+            },
+            {
+                test: /\.scss$/,
+                exclude: root('src'),
+                loader: 'null'
+            },
+            {
+                test: /\.scss$/,
+                include: root('src'),
+                loader: 'raw!postcss!sass'
             }
         ]
     }
