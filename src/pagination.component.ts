@@ -17,13 +17,12 @@ declare var _: any;
     styleUrls: ['pagination.component.scss']
 })
 export class PaginationComponent {
+    @Input() limits: number[] = [10, 50, 100];
     @Input() total: number = 0;
     @Input() limit: number = 1;
     @Input() page: number = 1;
     @Output() goTo: EventEmitter<number> = new EventEmitter<number>();
     @Output() setLimit: EventEmitter<number> = new EventEmitter<number>();
-
-    protected limits: number[] = [10, 50, 100];
 
     constructor(@Optional() config: Config) {
         if (config) {

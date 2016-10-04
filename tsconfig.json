@@ -12,7 +12,7 @@
 //  uncomment for build
 //  comment for tests
 //  triggers the generation of the typings *.d.ts files, that enable IDE Intellisense
-//    "declaration": true,
+    "declaration": true,
     "outDir": "./lib",
     "noEmitHelpers": false,
     "isolatedModules": false
