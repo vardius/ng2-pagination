@@ -11,7 +11,7 @@
             </a>
         </li>
         <li class="current" *ngFor="let p of pagesRange()" [class.active]="page == p">
-            <a *ngIf="page == p" [myHighlight]="'background'" (click)="pageClicked(p)">
+            <a *ngIf="page == p" pagHighlight (click)="pageClicked(p)">
                 {{ p }} <span class="sr-only">(current)</span>
             </a>
         </li>
@@ -28,7 +28,7 @@
     </ul>
 </nav>
 <ul class="pagination">
-  <li [class.active]="limit == 10"><a [myHighlight]="['background', limit == 10]" (click)="limitClicked(10)">10</a></li>
-  <li [class.active]="limit == 50"><a [myHighlight]="['background', limit == 50]" (click)="limitClicked(50)">50</a></li>
-  <li [class.active]="limit == 100"><a [myHighlight]="['background', limit == 100]" (click)="limitClicked(100)">100</a></li>
+  <li [class.active]="limit == 10"><a pagHighlight (click)="limitClicked(10)">10</a></li>
+  <li [class.active]="limit == 50"><a pagHighlight (click)="limitClicked(50)">50</a></li>
+  <li [class.active]="limit == 100"><a pagHighlight (click)="limitClicked(100)">100</a></li>
 </ul>

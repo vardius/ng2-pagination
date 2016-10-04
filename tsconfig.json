@@ -10,12 +10,8 @@
     "noImplicitAny": true,
     "suppressImplicitAnyIndexErrors": true,
     "declaration": true,
-    "noEmitHelpers": false,
-    "outDir": "./lib",
-    "isolatedModules": false
+    "outDir": "./lib"
   },
-  "compileOnSave": false,
-  "buildOnSave": false,
   "exclude": [
     "components.d.ts",
     "typings/browser.d.ts",

@@ -2,6 +2,8 @@ import {async, TestBed, ComponentFixture} from '@angular/core/testing';
 import {PaginationComponent} from './pagination.component';
 import {By} from "@angular/platform-browser";
 import {Component} from "@angular/core";
+import {HighlightDirective} from "./highlight.directive";
+import {HighlightService} from "./highlight.service";
 
 @Component({
     template: `<vardius-pagination [total]="total" [page]="page" [limit]="limit" (setLimit)="setLimit($event)" (goTo)="goToPage($event)" class="text-center"></vardius-pagination>`
@@ -20,9 +22,9 @@ describe('PaginationComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [PaginationComponent, TestHostComponent],
+            declarations: [TestHostComponent, PaginationComponent, HighlightDirective],
+            providers: [HighlightService]
         });
-        // .compileComponents();
     }));
 
     beforeEach(() => {
