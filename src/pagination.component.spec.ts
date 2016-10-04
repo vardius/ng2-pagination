@@ -9,16 +9,22 @@ import {HighlightService} from "./highlight.service";
     template: `<vardius-pagination [total]="total" [page]="page" [limit]="limit" (setLimit)="setLimit($event)" (goTo)="goToPage($event)" class="text-center"></vardius-pagination>`
 })
 class TestHostComponent {
-    total:number = 100;
-    page :number= 1;
-    limit:number = 10;
-    setLimit(limit: number) { this.limit = limit; }
-    goToPage(page: number) { this.page = page; }
+    total: number = 100;
+    page: number = 1;
+    limit: number = 10;
+
+    setLimit(limit: number) {
+        this.limit = limit;
+    }
+
+    goToPage(page: number) {
+        this.page = page;
+    }
 }
 
 describe('PaginationComponent', () => {
-    let fixture:ComponentFixture<TestHostComponent>;
-    let testHost:TestHostComponent;
+    let fixture: ComponentFixture<TestHostComponent>;
+    let testHost: TestHostComponent;
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
@@ -28,25 +34,25 @@ describe('PaginationComponent', () => {
     }));
 
     beforeEach(() => {
-        fixture  = TestBed.createComponent(TestHostComponent);
+        fixture = TestBed.createComponent(TestHostComponent);
         testHost = fixture.componentInstance;
         fixture.detectChanges();
     });
 
     it('should display page', () => {
-        let currentPage   = fixture.debugElement.query(By.css('.hero'));
+        let currentPage = fixture.debugElement.query(By.css('.current a'));
         expect(currentPage.nativeElement.textContent).toContain(testHost.page);
     });
 
     it('should raise goTo event when clicked', () => {
-        let lastPage  = fixture.debugElement.query(By.css('.last'));
+        let lastPage = fixture.debugElement.query(By.css('.last a'));
         lastPage.triggerEventHandler('click', null);
-        expect(testHost.page).toBe(lastPage.nativeElement.textContent);
+        expect(testHost.page).toBe(Math.ceil(testHost.total / testHost.limit));
     });
 
     it('should raise setLimit event when clicked', () => {
-        let limit  = fixture.debugElement.query(By.css('.pagination li:first'));
+        let limit = fixture.debugElement.query(By.css('.pagination li:first-child a'));
         limit.triggerEventHandler('click', null);
-        expect(testHost.limit).toBe(limit.nativeElement.textContent);
+        expect(testHost.limit).toBe(10);
     });
 });

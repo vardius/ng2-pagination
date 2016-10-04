@@ -9,9 +9,16 @@
     "removeComments": false,
     "noImplicitAny": true,
     "suppressImplicitAnyIndexErrors": true,
-    "declaration": true,
-    "outDir": "./lib"
+//  uncomment for build
+//  comment for tests
+//  triggers the generation of the typings *.d.ts files, that enable IDE Intellisense
+//    "declaration": true,
+    "outDir": "./lib",
+    "noEmitHelpers": false,
+    "isolatedModules": false
   },
+  "compileOnSave": false,
+  "buildOnSave": false,
   "exclude": [
     "components.d.ts",
     "typings/browser.d.ts",
