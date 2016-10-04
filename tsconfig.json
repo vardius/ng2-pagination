@@ -20,7 +20,7 @@
   "compileOnSave": false,
   "buildOnSave": false,
   "exclude": [
-    "components.d.ts",
+    "index.d.ts",
     "typings/browser.d.ts",
     "typings/browser",
     "node_modules",
