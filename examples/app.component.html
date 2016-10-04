@@ -1,0 +1,6 @@
+<main>
+    <p>Total pages: {{ total }}</p>
+    <p>Current page: {{ page }}</p>
+    <p>Page limit: {{ limit }}</p>
+    <vardius-pagination [total]="total" [page]="page" [limit]="limit" (setLimit)="setLimit($event)" (goTo)="goToPage($event)" class="text-center"></vardius-pagination>
+</main>
