@@ -28,7 +28,7 @@
     </ul>
 </nav>
 <ul class="pagination">
-  <li [class.active]="limit == 10"><a pagHighlight (click)="limitClicked(10)">10</a></li>
-  <li [class.active]="limit == 50"><a pagHighlight (click)="limitClicked(50)">50</a></li>
-  <li [class.active]="limit == 100"><a pagHighlight (click)="limitClicked(100)">100</a></li>
+    <li *ngFor="let lim of limits" [class.active]="limit == lim">
+        <a pagHighlight (click)="limitClicked(lim)">{{ lim }}</a>
+    </li>
 </ul>

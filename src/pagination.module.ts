@@ -1,8 +1,17 @@
+/**
+ * This file is part of the angular2-pagination package.
+ *
+ * (c) Rafał Lorenz <vardius@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 import {NgModule, ModuleWithProviders} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {PaginationComponent} from "./pagination.component";
-import {HighlightService, HighlightServiceConfig} from "./highlight.service";
-import {HighlightDirective} from "./highlight.directive";
+import {HighlightService} from "./services/highlight.service";
+import {HighlightDirective} from "./directives/highlight.directive";
+import {Config} from "./config";
 
 @NgModule({
     imports: [CommonModule],
@@ -10,12 +19,12 @@ import {HighlightDirective} from "./highlight.directive";
     exports: [PaginationComponent]
 })
 export class PaginationModule {
-    static forRoot(config: HighlightServiceConfig): ModuleWithProviders {
+    static forRoot(config: Config): ModuleWithProviders {
         return {
             ngModule: PaginationModule,
             providers: [
                 HighlightService,
-                {provide: HighlightServiceConfig, useValue: config }
+                {provide: Config, useValue: config }
             ]
         };
     }

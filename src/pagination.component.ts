@@ -1,4 +1,14 @@
-import {Component, Input, EventEmitter, Output} from '@angular/core';
+/**
+ * This file is part of the angular2-pagination package.
+ *
+ * (c) Rafał Lorenz <vardius@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+import {Component, Input, EventEmitter, Output, Optional} from '@angular/core';
+import {Config} from "./config";
+
 declare var _: any;
 
 @Component({
@@ -12,6 +22,14 @@ export class PaginationComponent {
     @Input() page: number = 1;
     @Output() goTo: EventEmitter<number> = new EventEmitter<number>();
     @Output() setLimit: EventEmitter<number> = new EventEmitter<number>();
+
+    protected limits: number[] = [10, 50, 100];
+
+    constructor(@Optional() config: Config) {
+        if (config) {
+            this.limits = config.limits;
+        }
+    }
 
     totalPages() {
         return Math.ceil(this.total / this.limit);

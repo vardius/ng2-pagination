@@ -1,9 +1,17 @@
+/**
+ * This file is part of the angular2-pagination package.
+ *
+ * (c) Rafał Lorenz <vardius@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 import {async, TestBed, ComponentFixture} from '@angular/core/testing';
 import {PaginationComponent} from './pagination.component';
 import {By} from "@angular/platform-browser";
 import {Component} from "@angular/core";
-import {HighlightDirective} from "./highlight.directive";
-import {HighlightService} from "./highlight.service";
+import {HighlightDirective} from "./directives/highlight.directive";
+import {HighlightService} from "./services/highlight.service";
 
 @Component({
     template: `<vardius-pagination [total]="total" [page]="page" [limit]="limit" (setLimit)="setLimit($event)" (goTo)="goToPage($event)" class="text-center"></vardius-pagination>`

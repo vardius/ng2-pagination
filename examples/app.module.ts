@@ -15,7 +15,11 @@ import {PaginationModule} from "ng2-vardius-pagination";
 @NgModule({
     imports: [
         BrowserModule,
-        PaginationModule.forRoot({styleName: 'backgroundColor', styleValue: 'powderblue'})
+        PaginationModule.forRoot({
+            styleName: 'backgroundColor',
+            styleValue: 'powderblue',
+            limits: [10, 100, 200]
+        })
     ],
     declarations: [
         AppComponent

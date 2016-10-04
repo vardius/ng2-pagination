@@ -7,18 +7,14 @@
  * file that was distributed with this source code.
  */
 import {Injectable, Optional} from '@angular/core';
-
-export class HighlightServiceConfig {
-    styleName: string;
-    styleValue: string;
-}
+import {Config} from "../config";
 
 @Injectable()
 export class HighlightService {
     private _styleName: string = 'backgroundColor';
     private _styleValue: string = 'powderblue';
 
-    constructor(@Optional() config: HighlightServiceConfig) {
+    constructor(@Optional() config: Config) {
         if (config) {
             this._styleName = config.styleName;
             this._styleValue = config.styleValue;
