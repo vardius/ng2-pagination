@@ -7,7 +7,7 @@
     styleUrls: ['./items.component.scss'],
 
 })
-export class ItemsComponent implements OnInit, OnChanges {
+export class ItemsComponent implements OnInit {
     protected pageStream = new Subject<number>();
     protected items$: Observable<Item[]>;
     protected total$: Observable<number>;
