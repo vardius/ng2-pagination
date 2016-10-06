@@ -1,4 +1,4 @@
-describe('List Component', () => {
+describe('PaginationComponent', () => {
     beforeEach(() => {
         browser.get('/');
     });
