@@ -1,5 +1,5 @@
 /**
- * This file is part of the angular2-pagination package.
+ * This file is part of the ng2-pagination package.
  *
  * (c) Rafał Lorenz <vardius@gmail.com>
  *
